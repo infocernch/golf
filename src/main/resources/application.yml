@@ -24,3 +24,8 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:XE
     username: golf
     password: golf
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
