@@ -8,9 +8,11 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.ColumnDefault;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @NoArgsConstructor
@@ -66,4 +68,26 @@ public class GolferEntity extends BaseTimeEntity {
     @JsonIgnore
     private List<BoardEntity> boards;
 
+    @Column(name = "roles")
+    @NotNull
+    private String roles;//user, admin
+
+
+    public List<String> getRoleList() {
+        if (this.roles.length() > 0) {
+            return Arrays.asList(this.roles.split(","));
+        }
+        return new ArrayList<>();
+    }
+
+    @Builder
+    public GolferEntity(String name, @NotNull String id, @NotNull String email, @NotNull String password, int handy, int golferStatus, @NotNull String roles) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.handy = handy;
+        this.golferStatus = golferStatus;
+        this.roles = roles;
+    }
 }

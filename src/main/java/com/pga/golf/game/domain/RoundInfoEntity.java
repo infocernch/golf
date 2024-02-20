@@ -5,6 +5,7 @@ import com.pga.golf.golfer.domain.GolferEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotNull;
 
 @Getter
 @Entity
@@ -25,6 +26,10 @@ public class RoundInfoEntity extends BaseTimeEntity {
     )
     @Column(name = "round_seq")
     private long roundSeq;//라운딩 시퀀스
+
+    @Column(name = "map")
+    @NotNull
+    private String map;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private GolferEntity golfer;

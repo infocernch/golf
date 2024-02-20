@@ -3,8 +3,7 @@ package com.pga.golf.game.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
-
+import jakarta.validation.constraints.NotNull;
 @Entity
 @Table(name = "score_info")
 @NoArgsConstructor
