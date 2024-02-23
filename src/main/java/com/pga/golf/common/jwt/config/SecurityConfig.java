@@ -35,7 +35,7 @@ public class SecurityConfig  {
 //                .authorizeHttpRequests(authorize -> authorize.("/api/**")
 //                        .access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
 //                        .anyRequest("/api/admin/**")
-//                        .access("hasRole('ROLE_ADMIN')")
+//                        .access("hasRole('ROLE_ADMIN')")1
 //                        .anyRequest().permitAll())
 //
 //                .build();

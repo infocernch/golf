@@ -17,6 +17,7 @@ public class GolferController {
     private final GolferService golferService;
     @PostMapping("/join")
     public String join(@RequestBody GolferDTO golferDTO) {
+        //adsfafd
         System.out.println("컨트롤러입장");
         golferService.join(golferDTO);
         return "회원가입 성공";
