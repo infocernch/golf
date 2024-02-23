@@ -23,5 +23,10 @@ public class GolferController {
         return "회원가입 성공";
     }
 
+    @GetMapping
+    public void test() {
+        System.out.println("아무것도아닌코드");
+    }
+
 
 }
