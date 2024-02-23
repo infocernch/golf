@@ -4,11 +4,14 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.NotNull;
+
+import java.io.Serializable;
+
 @Entity
 @Table(name = "score_info")
 @NoArgsConstructor
 @Getter
-public class ScoreInfoEntity {
+public class ScoreInfoEntity implements Serializable {
     @Id
     @OneToOne
     @JoinColumn(name = "round_seq")

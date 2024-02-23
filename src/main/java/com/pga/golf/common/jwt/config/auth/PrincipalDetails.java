@@ -1,4 +1,4 @@
-package com.pga.golf.common.config.auth;
+package com.pga.golf.common.jwt.config.auth;
 
 import com.pga.golf.golfer.domain.GolferEntity;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,6 +13,12 @@ public class PrincipalDetails implements UserDetails {
     private GolferEntity golfer;
 
     public PrincipalDetails(GolferEntity golfer){this.golfer = golfer;}
+
+
+
+    public GolferEntity getGolfer(){
+        return golfer;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

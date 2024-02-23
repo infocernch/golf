@@ -1,4 +1,4 @@
-package com.pga.golf.common.config.auth;
+package com.pga.golf.common.jwt.config.auth;
 
 import com.pga.golf.golfer.domain.GolferEntity;
 import com.pga.golf.golfer.repository.GolferRepository;
@@ -22,7 +22,7 @@ public class PrincipalDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         logger.info("PrincipalDetailsService의 loadUserByUsername()");
-        logger.info("------",username);
+        logger.info("=========="+username+"==========");
         GolferEntity golferEntity = golferRepository.findById(username);
 
         return new PrincipalDetails(golferEntity);

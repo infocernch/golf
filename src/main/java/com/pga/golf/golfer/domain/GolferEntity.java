@@ -5,6 +5,7 @@ import com.pga.golf.board.domain.BoardEntity;
 import com.pga.golf.common.BaseTimeEntity;
 import com.pga.golf.game.domain.RoundInfoEntity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,8 @@ import java.util.List;
         , initialValue = 1
         ,allocationSize = 1
 )
+@Builder
+@AllArgsConstructor
 public class GolferEntity extends BaseTimeEntity {
 
     //기본키
@@ -80,14 +83,7 @@ public class GolferEntity extends BaseTimeEntity {
         return new ArrayList<>();
     }
 
-    @Builder
-    public GolferEntity(String name, @NotNull String id, @NotNull String email, @NotNull String password, int handy, int golferStatus, @NotNull String roles) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.handy = handy;
-        this.golferStatus = golferStatus;
-        this.roles = roles;
-    }
+
 }
+
+

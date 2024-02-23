@@ -1,4 +1,4 @@
-package com.pga.golf.common.config;
+package com.pga.golf.common.jwt.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

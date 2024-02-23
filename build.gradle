@@ -26,15 +26,16 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-
+    implementation 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'// 해테오스
     implementation 'org.springframework.boot:spring-boot-starter-security'//시큐리티
     implementation group: 'com.auth0', name: 'java-jwt', version: '4.4.0' // jwt
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+
     implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'//io
 
 
-    compileOnly 'org.projectlombok:lombok'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
     annotationProcessor 'org.projectlombok:lombok'

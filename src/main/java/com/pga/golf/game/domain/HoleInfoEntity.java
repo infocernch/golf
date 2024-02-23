@@ -5,16 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.NotNull;
 
+import java.io.Serializable;
+
 
 @Entity
 @Table(name = "hole_info")
 @NoArgsConstructor
 @Getter
-public class HoleInfoEntity {
+public class HoleInfoEntity implements Serializable {
+
+
     @Id
     @OneToOne
     @JoinColumn(name = "round_seq")
     private RoundInfoEntity roundInfo;
+
+    
 
     @Column(name = "one")
     @NotNull
@@ -87,7 +93,6 @@ public class HoleInfoEntity {
     @Column(name = "eighteen")
     @NotNull
     private int eighteen; //18번홀
-
 
 }
 
